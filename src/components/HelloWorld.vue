@@ -1,57 +1,133 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://github.com/vuejs/vue-cli/tree/dev/docs" target="_blank">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org/en/essentials/getting-started.html" target="_blank">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org/en/intro.html" target="_blank">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org/en" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-  </div>
+  <header>
+    <div class="container mb-3">
+      <div class="row">
+        <div class="col-12">
+          <form>
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input type="email" class="form-control form-control-lg" placeholder="carpenter, steelfixer, cleaner, etc...">
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-block btn-lg btn-success">Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="list-group">
+        <router-link to="/company" v-for="(item, i) in companies" :key="i" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="row">
+            <div class="col-1 mob-hide">
+              <img data-src="holder.js/75x75" class="rounded" alt="75x75" style="width: 75px; height: 75px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2275%22%20height%3D%2275%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2075%2075%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_162fbedba59%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_162fbedba59%22%3E%3Crect%20width%3D%2275%22%20height%3D%2275%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2219.34375%22%20y%3D%2242.15%22%3E75x75%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+            </div>
+            <div class="col">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{i}}. {{ item.name }}</h5>
+                <small>{{ item.location }}</small>
+              </div>
+              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              <div class="d-flex w-100 justify-content-between">
+                <small>Donec id elit non mi porta.</small>
+                <small>
+                  <v-icon name="star" v-bind:class="{ rank: (i > 0) }"></v-icon>
+                  <v-icon name="star" v-bind:class="{ rank: (i > 2) }"></v-icon>
+                  <v-icon name="star" v-bind:class="{ rank: (i > 4) }"></v-icon>
+                  <v-icon name="star" v-bind:class="{ rank: (i > 6) }"></v-icon>
+                  <v-icon name="star" v-bind:class="{ rank: (i > 7) }"></v-icon>
+                </small>
+              </div>
+            </div>
+          </div>
+        </router-link>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
     msg: String
+  },
+  data() {
+    return {
+      isActive: true,
+      companies: []
+    }
+  },
+  created() {
+    this.getCompanies()
+  },
+  methods: {
+    async getCompanies () {
+      const res = await axios.post(
+        'http://localhost:4000/graphql', {
+        query: `{
+          company {
+            name
+            location
+          }
+        }`
+      })
+      this.companies = res.data.data.company
+      console.log(this.companies)
+    }
   }
-}
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.col-1 {
+  margin-right: 15px;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+header {
+  color: white;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.pagination {
+  margin-top: 20px;
 }
-a {
-  color: #42b983;
+.icon {
+  width: 70%;
+}
+small .icon {
+  width: 16px;
+}
+small .icon.rank {
+  color: #ffc107;
+}
+@media (max-width: 992px) {
+  .mob-hide {
+    display: none;
+  }
 }
 </style>
+
