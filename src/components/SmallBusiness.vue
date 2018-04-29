@@ -4,7 +4,7 @@
       <!-- Heading Row -->
       <div class="row">
         <div class="col-lg-6 mb-4">
-          <h1 class="mb-5">Business Name
+          <h1 class="mb-5">{{ company.name }}
             <span class="float-right">
               <v-icon name="star"></v-icon>
               <v-icon name="star"></v-icon>
@@ -98,14 +98,37 @@
 </template>
 
 <script>
+import graphQL from "../service/index";
+
 export default {
-  name: "HelloWorld",
+  name: "SmallBusiness",
   props: {
     msg: String
+  },
+  data() {
+    return {
+      company: null
+    };
+  },
+  created() {
+    this.fetchData();
+  },
+  methods: {
+    async fetchData() {
+      graphQL
+        .getCompany(this.$route.params.id)
+        .then(result => {
+          this.company = result.data.data.getCompany;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 </style>
