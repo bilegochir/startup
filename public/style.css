@@ -1,12 +1,13 @@
 html, body {
-  font-family: Segoe UI WestEuropean,Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-family: "Open Sans",sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   font-weight: 200;
   color: #606266;
   height: 100%;
   margin: 0;
+  font-size: 14px;
 }
 h1, h2, h3, h4, h5, p, span, input, .btn {
-  font-family: Segoe UI WestEuropean,Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-family: "Open Sans",sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;
   font-weight: 300;
 }
 .icon {
@@ -68,4 +69,55 @@ header {
   header {
     padding: 90px 0 60px;
   }
+}
+.btn-success {
+  color: #fff;
+  background-color: #2740fd;
+  border-color: #435aff;
+}.btn-success {
+  color: #fff;
+  background-color: #435aff;
+  border-color: #435aff;
+}
+.btn-success:hover {
+  color: #fff;
+  background-color: #2740fd;
+  border-color: #2740fd;
+}
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color:#2740fd;
+  top: 40px;
+  bottom: 0;
+  left: 35px;
+  margin-left: -3px;
+}
+.timeline ul {
+  list-style: none;
+  margin-left: 20px;
+}
+.item {
+  position: relative;
+  margin-bottom: 40px;
+}
+.item::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: -56px;
+  background-color: white;
+  border: 2px solid #2740fd;
+  top: 5px;
+  border-radius: 50%;
+  z-index: 1;
+}
+.item h6 {
+  color: #624efe;
+}
+.details {
+  font-size: 14px;
+  font-weight: 200;
 }

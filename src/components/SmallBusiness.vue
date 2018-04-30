@@ -1,98 +1,96 @@
 <template>
   <header>
     <div class="container">
-      <!-- Heading Row -->
       <div class="row">
-        <div class="col-lg-6 mb-4">
-          <h1 class="mb-5">{{ company.name }}
-            <span class="float-right">
-              <v-icon name="star"></v-icon>
-              <v-icon name="star"></v-icon>
-              <v-icon name="star"></v-icon>
-              <v-icon name="star"></v-icon>
-              <v-icon name="star"></v-icon>
-            </span>
-          </h1>
-          <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-          <ul v-for="n in 4" :key="n">
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-          </ul>
+        <div class="col-12 col-md-3 bg-white p-4 details fixed">
+          <h4>{{ company.name }}</h4>
+          <small>
+            <v-icon name="star" class="rank"></v-icon>
+            <v-icon name="star" class="rank"></v-icon>
+            <v-icon name="star" class="rank"></v-icon>
+            <v-icon name="star"></v-icon>
+            <v-icon name="star"></v-icon>
+          </small>
+          <hr>
+          <p>Senior Steelfixer</p>
+          <p><strong>George Doubble</strong></p>
+          <p>george@monmagnet.com</p>
+          <p>0437 760 531</p>
+          <hr>
+          <p>Accountant</p>
+          <p><strong>Bill Clinton</strong></p>
+          <p>bill@monmagnet.com</p>
+          <p>0437 760 531</p>
         </div>
-        <div class="col-lg-6">
-          <img class="img-fluid img-thumbnail rounded" src="http://www.unasurcds.org/wp-content/uploads/2017/03/tg2wed7c6ywed7u22.jpg" alt="">
+        <div class="col-12 col-md-9 p-4 bg-white scrollit">
+          <div class="timeline">
+            <ul>
+              <li class="item">
+                <h6>09 July, 2015</h6>
+                <p>{{ company.description }}</p>
+              </li>
+              <li class="item">
+                <h6>09 July, 2015</h6>
+                <p>{{ company.description }}</p>
+                <div class="row project-img">
+                  <div class="col">
+                    <img class="img-fluid img-thumbnail" src="http://placehold.it/500x300" alt="">
+                  </div>
+                  <div class="col">
+                    <img class="img-fluid img-thumbnail" src="http://placehold.it/500x300" alt="">
+                  </div>
+                  <div class="col">
+                    <img class="img-fluid img-thumbnail" src="http://placehold.it/500x300" alt="">
+                  </div>
+                </div>
+              </li>
+              <li class="item">
+                <h6>09 July, 2015</h6>
+                <p>{{ company.description }}</p>
+              </li>
+              <li class="item">
+                <h6>09 July, 2015</h6>
+                <p>{{ company.description }}</p>
+                <div class="row project-img">
+                  <div class="col-4">
+                    <img class="img-fluid img-thumbnail" src="http://placehold.it/500x300" alt="">
+                  </div>
+                  <div class="col-4">
+                    <img class="img-fluid img-thumbnail" src="http://placehold.it/500x300" alt="">
+                  </div>
+                  <div class="col-4">
+                    <img class="img-fluid img-thumbnail" src="http://placehold.it/500x300" alt="">
+                  </div>
+                  <div class="col-4">
+                    <img class="img-fluid img-thumbnail" src="http://placehold.it/500x300" alt="">
+                  </div>
+                  <div class="col-4">
+                    <img class="img-fluid img-thumbnail" src="http://placehold.it/500x300" alt="">
+                  </div>
+                  <div class="col-4">
+                    <img class="img-fluid img-thumbnail" src="http://placehold.it/500x300" alt="">
+                  </div>
+                </div>
+              </li>
+              <li class="item">
+                <h6>09 July, 2015</h6>
+                <p>{{ company.description }}</p>
+                <div class="row project-img">
+                  <div class="col">
+                    <img class="img-fluid img-thumbnail" src="http://placehold.it/500x300" alt="">
+                  </div>
+                  <div class="col">
+                    <img class="img-fluid img-thumbnail" src="http://placehold.it/500x300" alt="">
+                  </div>
+                  <div class="col">
+                    <img class="img-fluid img-thumbnail" src="http://placehold.it/500x300" alt="">
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <!-- /.row -->
-
-      <h4 class="mt-5">Projects</h4>
-      <hr>
-
-      <!-- Content Row -->
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Project One</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary float-right">More Info</a>
-            </div>
-          </div>
-        </div>
-        <!-- /.col-md-4 -->
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Project Two</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary float-right">More Info</a>
-            </div>
-          </div>
-        </div>
-        <!-- /.col-md-4 -->
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Project Three</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary float-right">More Info</a>
-            </div>
-          </div>
-        </div>
-        <!-- /.col-md-4 -->
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Project Three</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary float-right">More Info</a>
-            </div>
-          </div>
-        </div>
-        <!-- /.col-md-4 -->
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Project Three</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary float-right">More Info</a>
-            </div>
-          </div>
-        </div>
-        <!-- /.col-md-4 -->
-
-      </div>
-      <!-- /.row -->
-
     </div>
   </header>
 </template>
@@ -107,18 +105,25 @@ export default {
   },
   data() {
     return {
-      company: null
+      company: ""
     };
   },
   created() {
     this.fetchData();
+    this.company = JSON.parse(localStorage.getItem("company"));
   },
   methods: {
     async fetchData() {
       graphQL
         .getCompany(this.$route.params.id)
         .then(result => {
-          this.company = result.data.data.getCompany;
+          if (result.data.data.getCompany) {
+            localStorage.setItem(
+              "company",
+              JSON.stringify(result.data.data.getCompany)
+            );
+            this.company = result.data.data.getCompany;
+          }
         })
         .catch(error => {
           console.log(error);
@@ -130,5 +135,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.icon {
+  width: 18px;
+}
+small .icon.rank {
+  color: #ffc107;
+}
+.col-4 {
+  margin-bottom: 10px;
+}
+hr {
+  margin-bottom: 30px;
+}
 </style>

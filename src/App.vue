@@ -12,13 +12,15 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <router-link to="/addcompany" class="nav-link js-scroll-trigger" href="#about">Add</router-link>
+              <router-link to="/addbusiness" class="nav-link js-scroll-trigger" href="#about">
+                Add your business
+              </router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+              <router-link to="/account" class="nav-link js-scroll-trigger">Account</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+              <router-link to="/account" class="nav-link js-scroll-trigger">Help</router-link>
             </li>
           </ul>
         </div>
@@ -86,9 +88,6 @@ export default {
 </script>
 
 <style scoped>
-.navbar-brand icon {
-  width: 16px;
-  color: white;
-}
+
 </style>
 

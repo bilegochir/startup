@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import BusinessList from '@/components/BusinessList'
 import SmallBusiness from '@/components/SmallBusiness'
-import AddCompany from '@/components/AddCompany'
+import AddBusiness from '@/components/AddBusiness'
+import Account from '@/components/Account'
 
 Vue.use(Router)
 
@@ -10,8 +11,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'BusinessList',
+      component: BusinessList
     },
     {
       path: '/company',
@@ -19,9 +20,14 @@ export default new Router({
       component: SmallBusiness
     },
     {
-      path: '/addcompany',
-      name: 'addcompany',
-      component: AddCompany
+      path: '/addbusiness',
+      name: 'addbusiness',
+      component: AddBusiness
+    },
+    {
+      path: '/account',
+      name: 'account',
+      component: Account
     }
   ]
 })
