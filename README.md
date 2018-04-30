@@ -1,6 +1,7 @@
-# Project Title
+# Business database
 
-One Paragraph of project description goes here
+To collect all small and middle sized business and their information to make it easy to find and 
+rank for the customers.
 
 ## Getting Started
 
@@ -18,16 +19,16 @@ Give examples
 
 A step by step series of examples that tell you have to get a development env running
 
-Say what the step will be
+Install dependencies
 
 ```
-Give the example
+yarn install
 ```
 
-And repeat
+And run it
 
 ```
-until finished
+yarn serve
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
