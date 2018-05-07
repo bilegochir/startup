@@ -3,16 +3,11 @@
     <div class="container mb-3">
       <div class="row">
         <div class="col-12">
-          <form>
-            <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="carpenter, steelfixer, cleaner, etc...">
-              </div>
-              <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-success">Search</button>
-              </div>
+          <div class="form-row">
+            <div class="col-12 mb-2 mb-md-0">
+              <input type="text" v-model="search" class="form-control form-control-lg" placeholder="Search">
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -72,40 +67,30 @@
 </template>
 
 <script>
-import axios from 'axios'
+import graphQL from "../service/index";
 
 export default {
   name: "BusinessList",
-  props: {
-    msg: String
-  },
   data() {
     return {
       isActive: true,
-      companies: []
-    }
+      companies: [],
+      search: ""
+    };
   },
   created() {
-    this.getCompanies()
+    this.fetchData(this.search);
+  },
+  watch: {
+    search: function(value) {
+      this.fetchData(value);
+    }
   },
   methods: {
-    async getCompanies () {
-      const res = await axios.post(
-        'http://localhost:4000/graphql', {
-        query: `{
-          getCompanies {
-            _id
-            name
-            abn
-            description
-            phone
-            location
-            category
-            subcategory
-          }
-        }`
-      })
-      this.companies = res.data.data.getCompanies
+    fetchData(val) {
+      graphQL.getCompanies(val).then(result => {
+        this.companies = result.data.data.getCompanies;
+      });
     }
   }
 };

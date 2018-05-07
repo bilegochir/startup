@@ -9,7 +9,7 @@
               <div class="card-text">
                 <hr>
                 <div class="form-group">
-                  <label for="name">Email</label>
+                  <label for="email">Email</label>
                   <input type="email" class="form-control" v-model="email" id="email">
                 </div>
                 <div class="form-group">
@@ -52,8 +52,6 @@ export default {
   },
   data() {
     return {
-      email: '',
-      password: '',
       isActive: true,
       name: "",
       abn: "",
@@ -61,7 +59,9 @@ export default {
       phone: "",
       location: "",
       category: "",
-      subcategory: ""
+      subcategory: "",
+      email: "",
+      password: ""
     };
   },
   methods: {
@@ -75,7 +75,9 @@ export default {
             this.phone,
             this.location,
             this.category,
-            this.subcategory
+            this.subcategory,
+            this.email,
+            this.password
           )
           .then(result => {
             this.$notify({
